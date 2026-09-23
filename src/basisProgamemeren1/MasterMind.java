@@ -30,10 +30,10 @@ public class MasterMind {
 		String Rij1Vak2;
 		String Rij1Vak3;
 		String Rij1Vak4;
-		String Rij2Vak1;
-		String Rij2Vak2;
-		String Rij2Vak3;
-		String Rij2Vak4;
+		String Rij2ak1;
+		String Rij2ak2;
+		String Rij2ak3;
+		String Rij2ak4;
 		String Rij3Vak1;
 		String Rij3Vak2;
 		String Rij3Vak3;
@@ -119,7 +119,6 @@ public class MasterMind {
 		String Rij1vak4 = sc.next();
 		
 		
-		// Controle vak 1
 		if (Rij1vak1.equals(CodemakerVak1)) {
 		    Rij1Checkvak1 = "zwart";
 		} else if (Rij1vak1.equals(CodemakerVak2) ||
@@ -130,7 +129,6 @@ public class MasterMind {
 		    Rij1Checkvak1 = "leeg";
 		}
 
-		// Controle vak 2
 		if (Rij1vak2.equals(CodemakerVak2)) {
 		    Rij1Checkvak2 = "zwart";
 		} else if (Rij1vak2.equals(CodemakerVak1) ||
@@ -141,7 +139,6 @@ public class MasterMind {
 		    Rij1Checkvak2 = "leeg";
 		}
 
-		// Controle vak 3
 		if (Rij1vak3.equals(CodemakerVak3)) {
 		    Rij1Checkvak3 = "zwart";
 		} else if (Rij1vak3.equals(CodemakerVak1) ||
@@ -162,10 +159,60 @@ public class MasterMind {
 		    Rij1Checkvak4 = "leeg";
 		}
 
-		// PRINTEN!
 		System.out.println("antwoord:");
 		System.out.println(Rij1Checkvak1 + " " + Rij1Checkvak2 + " " + Rij1Checkvak3 + " " + Rij1Checkvak4);
 
+		System.out.println("voer pin 1 in voor rij 2");
+		String Rij2Vak1 = sc.next();
+		System.out.println("voer pin 2 in voor rij 2");
+		String Rij2Vak2 = sc.next();
+		System.out.println("voer pin 3 in voor rij 2");
+		String Rij2Vak3 = sc.next();
+		System.out.println("voor pin 4 in voor rij 2");
+		String Rij2Vak4 = sc.next();
+		
+		if (Rij2Vak1.equals(CodemakerVak1)) {
+		    Rij2Checkvak1 = "zwart";
+		} else if (Rij2Vak1.equals(CodemakerVak2) ||
+		           Rij2Vak1.equals(CodemakerVak3) ||
+		           Rij2Vak1.equals(CodemakerVak4)) {
+		    Rij2Checkvak1 = "wit";
+		} else {
+		    Rij2Checkvak1 = "leeg";
+		}
+
+		if (Rij2Vak2.equals(CodemakerVak2)) {
+		    Rij2Checkvak2 = "zwart";
+		} else if (Rij2Vak2.equals(CodemakerVak1) ||
+		           Rij2Vak2.equals(CodemakerVak3) ||
+		           Rij2Vak2.equals(CodemakerVak4)) {
+		    Rij2Checkvak2 = "wit";
+		} else {
+		    Rij2Checkvak2 = "leeg";
+		}
+
+		if (Rij2Vak3.equals(CodemakerVak3)) {
+		    Rij2Checkvak3 = "zwart";
+		} else if (Rij2Vak3.equals(CodemakerVak1) ||
+		           Rij2Vak3.equals(CodemakerVak2) ||
+		           Rij2Vak3.equals(CodemakerVak4)) {
+		    Rij2Checkvak3 = "wit";
+		} else {
+		    Rij2Checkvak3 = "leeg";
+		}
+
+		if (Rij2Vak4.equals(CodemakerVak4)) {
+		    Rij2Checkvak4 = "zwart";
+		} else if (Rij2Vak4.equals(CodemakerVak1) ||
+		           Rij2Vak4.equals(CodemakerVak2) ||
+		           Rij2Vak4.equals(CodemakerVak3)) {
+		    Rij2Checkvak4 = "wit";
+		} else {
+		    Rij2Checkvak4 = "leeg";
+		}
+
+		System.out.println("antwoord:");
+		System.out.println(Rij2Checkvak1 + " " + Rij2Checkvak2 + " " + Rij2Checkvak3 + " " + Rij2Checkvak4);
 
 	}
 }
