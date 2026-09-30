@@ -107,112 +107,76 @@ public class MasterMind {
 		String Rij10Checkvak2;
 		String Rij10Checkvak3;
 		String Rij10Checkvak4;
+        Scanner sc = new Scanner (System.in) ;
+
+		int loop =0 ;
+		do {
+		    System.out.println("voer pin 1 in");
+		    String Rij1vak1 = sc.next();
+		    System.out.println("voer pin 2 in");
+		    String Rij1vak2 = sc.next();
+		    System.out.println("voer pin 3 in");
+		    String Rij1vak3 = sc.next();
+		    System.out.println("voer pin 4 in");
+		    String Rij1vak4 = sc.next();
+
+		    if (Rij1vak1.equals(CodemakerVak1)) {
+			    Rij1Checkvak1 = PinZwart;
+			} else if (Rij1vak1.equals(CodemakerVak2) ||
+			           Rij1vak1.equals(CodemakerVak3) ||
+			           Rij1vak1.equals(CodemakerVak4)) {
+			    Rij1Checkvak1 = PinWit;
+			} else {
+			    Rij1Checkvak1 = PinLeeg;
+			}
+
+			if (Rij1vak2.equals(CodemakerVak2)) {
+			    Rij1Checkvak2 = PinZwart;
+			} else if (Rij1vak2.equals(CodemakerVak1) ||
+			           Rij1vak2.equals(CodemakerVak3) ||
+			           Rij1vak2.equals(CodemakerVak4)) {
+			    Rij1Checkvak2 = PinWit;
+			} else {
+			    Rij1Checkvak2 = PinLeeg;
+			}
+
+
+			    if (Rij1vak3.equals(CodemakerVak3)) {
+			        Rij1Checkvak3 = PinZwart;
+			    } else if (Rij1vak3.equals(CodemakerVak1) ||
+			               Rij1vak3.equals(CodemakerVak2) ||
+			               Rij1vak3.equals(CodemakerVak4)) {
+			        Rij1Checkvak3 = PinWit;
+			    } else {
+			        Rij1Checkvak3 = PinLeeg;
+			    }
+
+			    if (Rij1vak4.equals(CodemakerVak4)) {
+			        Rij1Checkvak4 = PinZwart;
+			    } else if (Rij1vak4.equals(CodemakerVak1) ||
+			               Rij1vak4.equals(CodemakerVak2) ||
+			               Rij1vak4.equals(CodemakerVak3)) {
+			        Rij1Checkvak4 = PinWit;
+			    } else {
+			        Rij1Checkvak4 = PinLeeg;
+			    }
+
+		    System.out.println("antwoord:");
+		    System.out.println(Rij1Checkvak1 + " " + Rij1Checkvak2 + " " + Rij1Checkvak3 + " " + Rij1Checkvak4);
+
+		    // STOP wanneer alle vier zwart zijn
+		    if (Rij1Checkvak1.equals(PinZwart) &&
+		        Rij1Checkvak2.equals(PinZwart) &&
+		        Rij1Checkvak3.equals(PinZwart) &&
+		        Rij1Checkvak4.equals(PinZwart)) {
+
+		        System.out.println("Je hebt gewonnen!");
+		        break;
+		    }
+
+		    loop++;
+
+		} while (loop < 10);}}
+
 		
-		Scanner sc = new Scanner(System.in);
-		System.out.println("voer pin 1 in");
-		String Rij1vak1 = sc.next();
-		System.out.println("voer pin 2 in");
-		String Rij1vak2 = sc.next();
-		System.out.println("voer pin 3 in");
-		String Rij1vak3 = sc.next();
-		System.out.println("voor pin 4 in");
-		String Rij1vak4 = sc.next();
 		
-		
-		if (Rij1vak1.equals(CodemakerVak1)) {
-		    Rij1Checkvak1 = "zwart";
-		} else if (Rij1vak1.equals(CodemakerVak2) ||
-		           Rij1vak1.equals(CodemakerVak3) ||
-		           Rij1vak1.equals(CodemakerVak4)) {
-		    Rij1Checkvak1 = "wit";
-		} else {
-		    Rij1Checkvak1 = "leeg";
-		}
-
-		if (Rij1vak2.equals(CodemakerVak2)) {
-		    Rij1Checkvak2 = "zwart";
-		} else if (Rij1vak2.equals(CodemakerVak1) ||
-		           Rij1vak2.equals(CodemakerVak3) ||
-		           Rij1vak2.equals(CodemakerVak4)) {
-		    Rij1Checkvak2 = "wit";
-		} else {
-		    Rij1Checkvak2 = "leeg";
-		}
-
-		if (Rij1vak3.equals(CodemakerVak3)) {
-		    Rij1Checkvak3 = "zwart";
-		} else if (Rij1vak3.equals(CodemakerVak1) ||
-		           Rij1vak3.equals(CodemakerVak2) ||
-		           Rij1vak3.equals(CodemakerVak4)) {
-		    Rij1Checkvak3 = "wit";
-		} else {
-		    Rij1Checkvak3 = "leeg";
-		}
-
-		if (Rij1vak4.equals(CodemakerVak4)) {
-		    Rij1Checkvak4 = "zwart";
-		} else if (Rij1vak4.equals(CodemakerVak1) ||
-		           Rij1vak4.equals(CodemakerVak2) ||
-		           Rij1vak4.equals(CodemakerVak3)) {
-		    Rij1Checkvak4 = "wit";
-		} else {
-		    Rij1Checkvak4 = "leeg";
-		}
-
-		System.out.println("antwoord:");
-		System.out.println(Rij1Checkvak1 + " " + Rij1Checkvak2 + " " + Rij1Checkvak3 + " " + Rij1Checkvak4);
-
-		System.out.println("voer pin 1 in voor rij 2");
-		String Rij2Vak1 = sc.next();
-		System.out.println("voer pin 2 in voor rij 2");
-		String Rij2Vak2 = sc.next();
-		System.out.println("voer pin 3 in voor rij 2");
-		String Rij2Vak3 = sc.next();
-		System.out.println("voor pin 4 in voor rij 2");
-		String Rij2Vak4 = sc.next();
-		
-		if (Rij2Vak1.equals(CodemakerVak1)) {
-		    Rij2Checkvak1 = "zwart";
-		} else if (Rij2Vak1.equals(CodemakerVak2) ||
-		           Rij2Vak1.equals(CodemakerVak3) ||
-		           Rij2Vak1.equals(CodemakerVak4)) {
-		    Rij2Checkvak1 = "wit";
-		} else {
-		    Rij2Checkvak1 = "leeg";
-		}
-
-		if (Rij2Vak2.equals(CodemakerVak2)) {
-		    Rij2Checkvak2 = "zwart";
-		} else if (Rij2Vak2.equals(CodemakerVak1) ||
-		           Rij2Vak2.equals(CodemakerVak3) ||
-		           Rij2Vak2.equals(CodemakerVak4)) {
-		    Rij2Checkvak2 = "wit";
-		} else {
-		    Rij2Checkvak2 = "leeg";
-		}
-
-		if (Rij2Vak3.equals(CodemakerVak3)) {
-		    Rij2Checkvak3 = "zwart";
-		} else if (Rij2Vak3.equals(CodemakerVak1) ||
-		           Rij2Vak3.equals(CodemakerVak2) ||
-		           Rij2Vak3.equals(CodemakerVak4)) {
-		    Rij2Checkvak3 = "wit";
-		} else {
-		    Rij2Checkvak3 = "leeg";
-		}
-
-		if (Rij2Vak4.equals(CodemakerVak4)) {
-		    Rij2Checkvak4 = "zwart";
-		} else if (Rij2Vak4.equals(CodemakerVak1) ||
-		           Rij2Vak4.equals(CodemakerVak2) ||
-		           Rij2Vak4.equals(CodemakerVak3)) {
-		    Rij2Checkvak4 = "wit";
-		} else {
-		    Rij2Checkvak4 = "leeg";
-		}
-
-		System.out.println("antwoord:");
-		System.out.println(Rij2Checkvak1 + " " + Rij2Checkvak2 + " " + Rij2Checkvak3 + " " + Rij2Checkvak4);
-
-	}
-}
