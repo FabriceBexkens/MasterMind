@@ -28,51 +28,54 @@ public class MasterMind {
 		String Rij1Checkvak2;
 		String Rij1Checkvak3;
 		String Rij1Checkvak4;
-
+		String[] RijVakken = new String[4];
+		String[] RijcheckVaken = new String[4];
+		String[] PinKleuren = { "rood", "groen", "geel", "paars", "blauw", "oranje" };
+		String[] CodeMakerCode = { "rood", "groen", "geel", "paars" };
 		Scanner sc = new Scanner(System.in);
 		int winaar = 0;
 		for (int loop = 1; loop <= 10; loop++) {
 
 			System.out.println("voer pin 1 in");
-			String Rij1vak1 = sc.next();
+			RijVakken[0] = sc.next();
 			System.out.println("voer pin 2 in");
-			String Rij1vak2 = sc.next();
+			RijVakken[1] = sc.next();
 			System.out.println("voer pin 3 in");
-			String Rij1vak3 = sc.next();
+			RijVakken[2] = sc.next();
 			System.out.println("voer pin 4 in");
-			String Rij1vak4 = sc.next();
+			RijVakken[3] = sc.next();
 
-			if (Rij1vak1.equals(CodemakerVak1)) {
+			if (RijVakken[0].equals(CodemakerVak1)) {
 				Rij1Checkvak1 = PinZwart;
-			} else if (Rij1vak1.equals(CodemakerVak2) || Rij1vak1.equals(CodemakerVak3)
-					|| Rij1vak1.equals(CodemakerVak4)) {
+			} else if (RijVakken[0].equals(CodemakerVak2) || RijVakken[0].equals(CodemakerVak3)
+					|| RijVakken[0].equals(CodemakerVak4)) {
 				Rij1Checkvak1 = PinWit;
 			} else {
 				Rij1Checkvak1 = PinLeeg;
 			}
 
-			if (Rij1vak2.equals(CodemakerVak2)) {
+			if (RijVakken[1].equals(CodemakerVak2)) {
 				Rij1Checkvak2 = PinZwart;
-			} else if (Rij1vak2.equals(CodemakerVak1) || Rij1vak2.equals(CodemakerVak3)
-					|| Rij1vak2.equals(CodemakerVak4)) {
+			} else if (RijVakken[1].equals(CodemakerVak1) || RijVakken[1].equals(CodemakerVak3)
+					|| RijVakken[1].equals(CodemakerVak4)) {
 				Rij1Checkvak2 = PinWit;
 			} else {
 				Rij1Checkvak2 = PinLeeg;
 			}
 
-			if (Rij1vak3.equals(CodemakerVak3)) {
+			if (RijVakken[2].equals(CodemakerVak3)) {
 				Rij1Checkvak3 = PinZwart;
-			} else if (Rij1vak3.equals(CodemakerVak1) || Rij1vak3.equals(CodemakerVak2)
-					|| Rij1vak3.equals(CodemakerVak4)) {
+			} else if (RijVakken[2].equals(CodemakerVak1) || RijVakken[2].equals(CodemakerVak2)
+					|| RijVakken[2].equals(CodemakerVak4)) {
 				Rij1Checkvak3 = PinWit;
 			} else {
 				Rij1Checkvak3 = PinLeeg;
 			}
 
-			if (Rij1vak4.equals(CodemakerVak4)) {
+			if (RijVakken[3].equals(CodemakerVak4)) {
 				Rij1Checkvak4 = PinZwart;
-			} else if (Rij1vak4.equals(CodemakerVak1) || Rij1vak4.equals(CodemakerVak2)
-					|| Rij1vak4.equals(CodemakerVak3)) {
+			} else if (RijVakken[3].equals(CodemakerVak1) || RijVakken[3].equals(CodemakerVak2)
+					|| RijVakken[3].equals(CodemakerVak3)) {
 				Rij1Checkvak4 = PinWit;
 			} else {
 				Rij1Checkvak4 = PinLeeg;
@@ -88,12 +91,11 @@ public class MasterMind {
 				System.out.println("Je hebt gewonnen!");
 				loop = 11;
 			}
-			if (winaar == 5) {
+			
+		
+			} 	if (winaar != 5) {
 
-			} else
-			{
 				System.out.println("je hebt verloren");
-			}
 		}
 
 	}
