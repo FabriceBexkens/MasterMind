@@ -7,85 +7,62 @@ public class MasterMind {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		String PinZwart = "zwart";
-		String PinWit = "wit";
-
-		String PinRood = "rood";
-		String PinGroen = "groen";
-		String PinGeel = "geel";
-		String PinPaars = "paars";
-		String PinBlauw = "blauw";
-		String PinOranje = "oranje";
-
-		String PinLeeg = "leeg";
-
-		String CodemakerVak1 = "geel";
-		String CodemakerVak2 = "rood";
-		String CodemakerVak3 = "groen";
-		String CodemakerVak4 = "blauw";
-
-		String Rij1Checkvak1;
-		String Rij1Checkvak2;
-		String Rij1Checkvak3;
-		String Rij1Checkvak4;
-		String[] RijVakken = new String[4];
-		String[] RijcheckVaken = new String[4];
-		String[] PinKleuren = { "rood", "groen", "geel", "paars", "blauw", "oranje" };
-		String[] CodeMakerCode = { "rood", "groen", "geel", "paars" };
+		String[] checkPinnen = { "zwart", "wit","leeg" };
+		String[] rijVakken = new String[4];
+		String[] rijcheckVaken = new String[4];
+		String[] pinKleuren = { "rood", "groen", "geel", "paars", "blauw", "oranje" };
+		String[] codeMakerCode = { "rood", "groen", "geel", "paars" };
 		Scanner sc = new Scanner(System.in);
 		int winaar = 0;
 		for (int loop = 1; loop <= 10; loop++) {
 
-			System.out.println("voer pin 1 in");
-			RijVakken[0] = sc.next();
-			System.out.println("voer pin 2 in");
-			RijVakken[1] = sc.next();
-			System.out.println("voer pin 3 in");
-			RijVakken[2] = sc.next();
-			System.out.println("voer pin 4 in");
-			RijVakken[3] = sc.next();
-
-			if (RijVakken[0].equals(CodemakerVak1)) {
-				Rij1Checkvak1 = PinZwart;
-			} else if (RijVakken[0].equals(CodemakerVak2) || RijVakken[0].equals(CodemakerVak3)
-					|| RijVakken[0].equals(CodemakerVak4)) {
-				Rij1Checkvak1 = PinWit;
+			
+			for(int i = 0; i < 4 ; i++) {
+				System.out.print("voer Pin" + (i + 1));
+				rijVakken[i] = sc.next();
+			}
+			
+			if (rijVakken[0].equals(codeMakerCode[0])) {
+				rijcheckVaken[0] = checkPinnen[0];
+			} else if (rijVakken[0].equals(codeMakerCode[1]) || rijVakken[0].equals(codeMakerCode[2])
+					|| rijVakken[0].equals(codeMakerCode[3])) {
+				rijcheckVaken[0] = checkPinnen[1];
 			} else {
-				Rij1Checkvak1 = PinLeeg;
+				rijcheckVaken[0] =  checkPinnen[2];
 			}
 
-			if (RijVakken[1].equals(CodemakerVak2)) {
-				Rij1Checkvak2 = PinZwart;
-			} else if (RijVakken[1].equals(CodemakerVak1) || RijVakken[1].equals(CodemakerVak3)
-					|| RijVakken[1].equals(CodemakerVak4)) {
-				Rij1Checkvak2 = PinWit;
+			if (rijVakken[1].equals(codeMakerCode[1])) {
+				rijcheckVaken[1] = checkPinnen[0];
+			} else if (rijVakken[1].equals(codeMakerCode[0]) || rijVakken[1].equals(codeMakerCode[2])
+					|| rijVakken[1].equals(codeMakerCode[3])) {
+				rijcheckVaken[1] =  checkPinnen[1];
 			} else {
-				Rij1Checkvak2 = PinLeeg;
+				rijcheckVaken[1] = checkPinnen[2];
 			}
 
-			if (RijVakken[2].equals(CodemakerVak3)) {
-				Rij1Checkvak3 = PinZwart;
-			} else if (RijVakken[2].equals(CodemakerVak1) || RijVakken[2].equals(CodemakerVak2)
-					|| RijVakken[2].equals(CodemakerVak4)) {
-				Rij1Checkvak3 = PinWit;
+			if (rijVakken[2].equals(codeMakerCode[2])) {
+				rijcheckVaken[2] = checkPinnen[0];
+			} else if (rijVakken[2].equals(codeMakerCode[0]) || rijVakken[2].equals(codeMakerCode[1])
+					|| rijVakken[2].equals(codeMakerCode[3])) {
+				rijcheckVaken[2] =  checkPinnen[1];
 			} else {
-				Rij1Checkvak3 = PinLeeg;
+				rijcheckVaken[2] = checkPinnen[2];
 			}
 
-			if (RijVakken[3].equals(CodemakerVak4)) {
-				Rij1Checkvak4 = PinZwart;
-			} else if (RijVakken[3].equals(CodemakerVak1) || RijVakken[3].equals(CodemakerVak2)
-					|| RijVakken[3].equals(CodemakerVak3)) {
-				Rij1Checkvak4 = PinWit;
+			if (rijVakken[3].equals(codeMakerCode[3])) {
+				rijcheckVaken[3] = checkPinnen[0];
+			} else if (rijVakken[3].equals(codeMakerCode[0]) || rijVakken[3].equals(codeMakerCode[1])
+					|| rijVakken[3].equals(codeMakerCode[2])) {
+				rijcheckVaken[3] = checkPinnen[1];
 			} else {
-				Rij1Checkvak4 = PinLeeg;
+				rijcheckVaken[3] = checkPinnen[2];
 			}
 
 			System.out.println("antwoord:");
-			System.out.println(Rij1Checkvak1 + " " + Rij1Checkvak2 + " " + Rij1Checkvak3 + " " + Rij1Checkvak4);
+			System.out.println(rijcheckVaken[0] + " " + rijcheckVaken[1] + " " + rijcheckVaken[2] + " " + rijcheckVaken[3]);
 
-			if (Rij1Checkvak1.equals(PinZwart) && Rij1Checkvak2.equals(PinZwart) && Rij1Checkvak3.equals(PinZwart)
-					&& Rij1Checkvak4.equals(PinZwart)) {
+			if (rijcheckVaken[0].equals(checkPinnen[0]) && rijcheckVaken[1].equals(checkPinnen[0]) && rijcheckVaken[2].equals(checkPinnen[0])
+					&& rijcheckVaken[3].equals(checkPinnen[0])) {
 				winaar = 5;
 
 				System.out.println("Je hebt gewonnen!");
