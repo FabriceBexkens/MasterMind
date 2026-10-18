@@ -18,7 +18,7 @@ public class MasterMind {
 
 			
 			for(int i = 0; i < 4 ; i++) {
-				System.out.print("voer Pin" + (i + 1));
+				System.out.print("voer Pin " + (i + 1));
 				rijVakken[i] = sc.next();
 			}
 			
